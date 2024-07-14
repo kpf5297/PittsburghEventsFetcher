@@ -4,8 +4,13 @@ from ics import Calendar, Event
 from datetime import datetime, timedelta
 import tkinter as tk
 from tkinter import messagebox, filedialog
+from dotenv import load_dotenv
+import os
 
-API_KEY = 'KEY'
+# Load environment variables from .env file
+load_dotenv()
+
+API_KEY = os.getenv('TICKETMASTER_API_KEY')
 BASE_URL = 'https://app.ticketmaster.com/discovery/v2/'
 DMA_ID = '360'  # Pittsburgh DMA
 
